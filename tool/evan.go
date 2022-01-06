@@ -1,6 +1,9 @@
 package tool
 
-import "strings"
+import (
+	"log"
+	"strings"
+)
 
 func CutStringByName(s string) string {
 	is := strings.Split(s, "/")
@@ -14,6 +17,12 @@ func CutStringByName(s string) string {
 func ErrorExit(err error) {
 	if err != nil {
 		panic(err)
+	}
+}
+
+func ErrorDontExit(err error) {
+	if err != nil {
+		log.Panicln(err)
 	}
 }
 
